@@ -11,15 +11,15 @@ export default class GifSearch extends Component {
 
     handleSubmmit = event => {
         event.preventDefault()
-        this.props.handleSearch(this.state.query)
+        this.props.getData(this.state.query)
     }
 
     render() {
         return (
        <div>
-           <form >
+           <form onSubmit={this.handleSubmmit} >
             <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
-            <button onSubmit={this.handleSubmmit}>Find Gifs</button>
+          
 
            </form>
 
